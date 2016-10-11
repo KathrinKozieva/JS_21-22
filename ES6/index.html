@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS 13-14</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="js/tmpl.js"></script>
+	<script src="js/dist/script.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<h1>My Test with JQuery, JSON, Templating:</h1>
+		<form action="#">
+		<ol class="list">
+		</ol>
+		<button class="submit"><a href="#openModal">Checking the results!</a></button>
+		</form>
+	
+		<script type="text/html" id="item_tmpl">
+			  <% for ( var i = 0; i < data.length; i++ ) { %>
+			    <li class="list__item"><%= data[i].question %>
+			    	<ul class="list__second">
+			    	  <li class="list__item__second"><%= data[i].answer1 %></li>
+			    	  <li class="list__item__second"><%= data[i].answer2 %></li>
+			    	  <li class="list__item__second"><%= data[i].answer3 %></li>
+			    	</ul>
+			    </li>
+			  <% }; %>
+		</script>
+		<div id="openModal" class="modalDialog">
+			<div>
+				<a href="#close" class="close" title="Close">X</a>
+				<p class="result">Nothing is checked... Choose your answers!</p>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>
